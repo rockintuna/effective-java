@@ -23,6 +23,8 @@ interface Item20Interface {
     default void log(String message) {
         System.out.println(message);
     }
+
+    String getEnd();
 }
 
 /*
@@ -34,6 +36,11 @@ abstract class AbstractItem20Interface implements Item20Interface {
     //설계가 잘 되어있을수록 효율적으로 사용할 수 있다.
     @Override
     public String getStart() {
-        return "";
+        return "start";
+    }
+
+    @Override
+    public String getEnd() {
+        return "end";
     }
 }
