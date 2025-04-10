@@ -41,9 +41,9 @@ public class Item21 implements Item21Interface{
     아래 메서드는 컴파일 오류가 발생한다.
     새로운 인터페이스 설계 단계에서는 잘 사용하면 좋다.
      */
-    public String isEmpty(String item) {
-        return item.isEmpty() ? "true" : "false";
-    }
+//    public String isEmpty(String item) {
+//        return item.isEmpty() ? "true" : "false";
+//    }
 }
 
 /*
