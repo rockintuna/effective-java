@@ -1,8 +1,5 @@
 package me.rockintuna.effectivejava.item;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 /*
 멤버 클래스는 되도록 static 으로 만들자
  */
