@@ -62,34 +62,37 @@ public class Item46 {
         - toSet()
         - toCollection(collectionFactory)
          */
-        List<String> collect = freq2.keySet().stream()
+        List<String> list = freq2.keySet().stream()
                 .sorted(Comparator.comparingLong(freq2::get).reversed())
                 .limit(10)
                 .collect(toList());
-
-    }
-
     /*
-        스트림에서 Map을 생성하는 수집기를 반환하는 메서드
-        - toMap(keyMapper, valueMapper)
-        - toMap(keyMapper, valueMapper, mergeFunction)
-        - toMap(keyMapper, valueMapper, mergeFunction, mapFactory)
-        - toConcurrentMap(keyMapper, valueMapper)
-        - groupingBy(분류 함수 classifier) : 분류함수는 요소의 키를 구하는데 사용되며, Map의 value는 요소들의 List이다.
-        - groupingBy(분류 함수 classifier, downstream) : 추가로 downstream 수집기를 입력하면
-        수집기가 생성하는 맵의 value로서 요소 리스트 이외에 다른 구조, 값을 사용할 수 있다.
-        - groupingBy(분류 함수 classifier, mapFactory, downstream)
-        - groupingByConcurrent(분류 함수 classifier)
-        - partitioningBy(predicate) : 키가 boolean인 Map을 반환하는 수집기
-        downstream 전용 수집기 메서드
-        - counting()
-        - summing + Int() || Long() || Double()
-        - averaging + Int() || Long() || Double()
-        - summarizing + Int() || Long() || Double()
-        - ...
-        CharSequence 요소 전용 문자열 생성기
-        - joining()
-        - joining(delimiter)
-     */
-
+            스트림에서 Map을 생성하는 수집기를 반환하는 메서드
+            - toMap(keyMapper, valueMapper)
+            - toMap(keyMapper, valueMapper, mergeFunction)
+            - toMap(keyMapper, valueMapper, mergeFunction, mapFactory)
+            */
+        Map<String, String> map = freq2.keySet().stream()
+                .sorted(Comparator.comparingLong(freq2::get).reversed())
+                .limit(10)
+                .collect(toMap(Object::toString, s -> s));
+        /*
+            - toConcurrentMap(keyMapper, valueMapper)
+            - groupingBy(분류 함수 classifier) : 분류함수는 요소의 키를 구하는데 사용되며, Map의 value는 요소들의 List이다.
+            - groupingBy(분류 함수 classifier, downstream) : 추가로 downstream 수집기를 입력하면
+            수집기가 생성하는 맵의 value로서 요소 리스트 이외에 다른 구조, 값을 사용할 수 있다.
+            - groupingBy(분류 함수 classifier, mapFactory, downstream)
+            - groupingByConcurrent(분류 함수 classifier)
+            - partitioningBy(predicate) : 키가 boolean인 Map을 반환하는 수집기
+            downstream 전용 수집기 메서드
+            - counting()
+            - summing + Int() || Long() || Double()
+            - averaging + Int() || Long() || Double()
+            - summarizing + Int() || Long() || Double()
+            - ...
+            CharSequence 요소 전용 문자열 생성기
+            - joining()
+            - joining(delimiter)
+         */
+    }
 }
